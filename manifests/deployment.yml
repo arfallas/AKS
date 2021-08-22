@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: arfallasaks 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arfallasaks
+  template:
+    metadata:
+      labels:
+        app: arfallasaks 
+    spec:
+      containers:
+        - name: arfallasaks 
+          image: arfallasacr.azurecr.io/arfallasaks
+          ports:
+          - containerPort: 8080
